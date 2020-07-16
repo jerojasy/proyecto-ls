@@ -1,0 +1,63 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+
+<br>
+<br>
+<br>
+<br>
+<div><br></div>
+
+<h1 class="text-center">Productos</h1>
+
+<div class="container">
+    <div class="row col-8">
+
+
+<div class="form col-8">
+    
+    <!-- <a class="btn btn-lg btn-hero bg-primary" href="/nueva_reserva/" id="bton" style="color: whitesmoke; background-color: #347ab6;">Nueva Reserva</a> -->
+
+<table class="table table-primary shadow rounded border col-8">
+    
+    <tr class="bg-primary border rounded text-center">
+        <th>ID</th>
+        <th>Producto</th>
+        <th>SKU</th>
+        <th>Marca</th>
+        <th>Descripcion</th>
+        <th>Fecha Vencimiento</th>
+        <th>Precio Compra</th>
+        <th>Precio Venta</th>
+        <th>Stock</th>
+        <th>Stock Critico</th>
+
+    </tr>
+    {% for p in productos_list %}
+
+    <tr class="bg-dark border rounded">
+        <td>{{p.id}}</td>
+        <td>{{p.nomproducto }}</td>
+        <td>{{p.SKU}}</td>
+        <td>{{p.marca}}</td>
+        <td>{{p.descripcion}}</td>
+        <td>{{p.vencimiento}}</td>
+        <td>{{p.preciocompra}}</td>
+        <td>{{p.precioventa }}</td>
+        <td>{{p.stock}}</td>
+        <td>{{p.stockcritico}}</td>
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+</div>
+
+</div>
+</div>
+
+{% endblock contenido %}

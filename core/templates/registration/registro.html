@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<br>
+<br>
+<br>
+<div><br></div>
+				<div class="formulario">
+					<form name="formregistro" action="" method="POST" class="form">
+						{% csrf_token %}
+
+						<table>
+							{{form.as_table}}
+						</table>
+						{% if message %}
+						<script>alert('{{message}}')</script>
+					{% endif %}
+						<!-- <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+						<input type="text" placeholder="Apellidos" name="apellido" id="apellidos" required>
+                        <label>Fecha de Nacimiento</label>
+						<input type="date" name="fechanacimiento" id="fechanacimiento" required>
+						<input type="text" placeholder="Teléfono" name="telefono" id="telefono" required>
+						<input type="text" placeholder="Correo" name="email" id="email" required>
+						<input type="password" placeholder="Contraseña" name="Contraseña" id="Contraseña" required> -->
+						<input type="submit" id="enviar" value="Enviar" class="boton">
+					</form>
+				</div>
+
+{% endblock contenido %}

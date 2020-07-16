@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block contenido %}
+<br>
+<br>
+<br>
+<br>
+<div><br></div>
+<form action="" method="POST" autocomplete="off">
+    {% csrf_token%}
+    {{form|crispy}}
+<button class="submit btn btn-success"><i class="fas fa-database"></i>Enviar</button>
+</form>
+
+{% endblock contenido %}
